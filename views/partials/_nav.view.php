@@ -7,13 +7,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                <a class="nav-link <?= urlIs('/') ? 'active' : ''?>" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="/about.php">About</a>
+                <a class="nav-link  <?= urlIs('/about.php') ? 'active' : ''?>" href="/about">About</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="/contact.php">Contact</a>
+                <a class="nav-link  <?= urlIs('/contact.php') ? 'active' : ''?>" href="/contact">Contact</a>
             </li>
         </ul>
         </div>

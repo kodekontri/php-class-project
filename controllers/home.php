@@ -35,13 +35,15 @@ function filterBy($books, $func){
     return $items;
 }
 
+$books = filterBy($books, function($book){
+    $filter = $_GET['filter'] ?? null; // author
+    $query = $_GET['query'] ?? null; // Kelvin Chi
 
-$booksByYear = filterBy($books, function($book){
-    return $book['year'] > 2014;
+    if(!$filter) return true;
+
+    return $book[$filter] === $query;
 });
 
-$booksByAuthor = filterBy($books, function($book){
-    return $book['author'] === 'Kelvin Chi';
-});
 
-require './views/index.view.php';
+$title = "Home Page";
+require '../views/index.view.php';
