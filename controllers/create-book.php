@@ -6,7 +6,11 @@ if($method === 'POST'){
     $author = $_POST['author'];
     $year = $_POST['year'];
 
-    $data = "$name|$author|$year";
+    $data = [
+        'name' => $name,
+        'author' => $author,
+        'year' => $year
+    ];
 
     create('books', $data);
     header('location: /books/create');

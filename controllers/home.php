@@ -15,8 +15,8 @@ function filterBy($books, $func){
 }
 
 $books = filterBy($books, function($book){
-    $filter = trim($_GET['filter']) ?? null; // author
-    $query = trim($_GET['query'] )?? null; // Kelvin Chi
+    $filter = trim($_GET['filter'] ?? null) ; // author
+    $query = trim($_GET['query'] ?? null); // Kelvin Chi
 
     if(!$filter) return true;
 

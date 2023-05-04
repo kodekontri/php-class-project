@@ -16,26 +16,16 @@ function routeTo($routes, $uri){
 $baseDir = '../store/';
 function create($collection, $data){
     global $baseDir;
-    $file = fopen("$baseDir$collection.txt", 'a');
-    fwrite($file, $data . "\n");
-    fclose($file);
+    $filename = "$baseDir$collection.json";
+
+    $dataFromFile = json_decode(file_get_contents($filename)) ?? [];
+    $data['id'] = count($dataFromFile) + 1;
+    $dataFromFile[] = $data;
+    file_put_contents($filename, json_encode($dataFromFile));
 }
 
 function read($collection){
     global $baseDir;
-    $data = [];
-    $file = fopen("$baseDir$collection.txt", 'r');
-    while(!feof($file)){
-        $line = trim(fgets($file));
-        $book = $line ? explode('|', $line) : null;
-        if($book){
-            $data[] = [
-                'name' => $book[0],
-                'author' => $book[1],
-                'year' => $book[2]
-            ];
-        }
-    }
-    fclose($file);
+    $data = json_decode(file_get_contents("$baseDir$collection.json"), true);
     return $data;
 }
