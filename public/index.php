@@ -1,14 +1,10 @@
 <?php
-require '../helpers.php';
+define('ROOTPATH', dirname(__FILE__, 2));
+define('VIEWPATH', ROOTPATH . DIRECTORY_SEPARATOR . 'views');
 
-$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
-
-$routes = [
-    '/' => '../controllers/home.php',
-    '/about' => '../controllers/about.php',
-    '/contact' => '../controllers/contact.php',
-    '/books/create' => '../controllers/create-book.php',
-];
+require ROOTPATH . DIRECTORY_SEPARATOR . 'helpers.php';
+require ROOTPATH . DIRECTORY_SEPARATOR . 'Router.php';
+require ROOTPATH . DIRECTORY_SEPARATOR . 'routes.php';
 
 
-routeTo($routes, $uri);
+Router::resolve();
