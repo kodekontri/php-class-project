@@ -7,13 +7,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link <?= Router::urlIs('/') ? 'active' : ''?>" aria-current="page" href="/">Home</a>
+                <a class="nav-link <?= App\Router::urlIs('/') ? 'active' : ''?>" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link  <?= Router::urlIs('/about') ? 'active' : ''?>" href="/about">About</a>
+                <a class="nav-link  <?= App\Router::urlIs('/about') ? 'active' : ''?>" href="/about">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link  <?= Router::urlIs('/contact') ? 'active' : ''?>" href="/contact">Contact</a>
+                <a class="nav-link  <?= App\Router::urlIs('/contact') ? 'active' : ''?>" href="/contact">Contact</a>
             </li>
         </ul>
         </div>

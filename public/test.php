@@ -1,5 +1,5 @@
 <?php
+define('ROOTPATH', dirname(__FILE__, 2));
 
-$file = fopen('test.txt', 'r+');
-echo fread($file, filesize('test.txt'));
-fclose($file);
+$v = Validator::make([],[]);
+$x = BookController::run();

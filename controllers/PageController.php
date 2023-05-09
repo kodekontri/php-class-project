@@ -1,4 +1,5 @@
 <?php
+namespace App\Controllers;
 
 class PageController
 {
@@ -15,7 +16,7 @@ class PageController
     }
 
     public function home(){
-        $bookStore = new DataStore('books');
+        $bookStore = new \App\DataStore('books');
         $books = $this->filterBy($bookStore->read(), function($book){
             $filter = trim($_GET['filter'] ?? null) ; // author
             $query = trim($_GET['query'] ?? null); // Kelvin Chi

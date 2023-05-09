@@ -1,5 +1,5 @@
 <?php
-
+namespace App;
 class Router
 {
     private static $routes = [

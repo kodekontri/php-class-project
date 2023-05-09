@@ -4,13 +4,13 @@
     <h4>Create Form</h4>
     <form method="post">
         <div class='mb-4'>
-            <input type='text' name='name' class='form-control'>
+            <input type='text' name='name' class='form-control' placeholder="Book Name">
         </div>
         <div class='mb-4'>
-            <input type='text' name='author' class='form-control'>
+            <input type='text' name='author' class='form-control' placeholder="Author">
         </div>
         <div class='mb-4'>
-            <input type='text' name='year' class='form-control'>
+            <input type='date' name='year' class='form-control'>
         </div>
         <button class='btn btn-primary'>Submit</button>
     </form>
